@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Deploy">
+  
+  <Target Name="Deploy">
+    <PropertyGroup>
+      <Props>Configuration=Release</Props>
+      <Props>$(Props);TargetFramework=net7.0-windows</Props>
+      <Props>$(Props);UseCurrentRuntimeIdentifier=true</Props>
+      <Props>$(Props);PublishSingleFile=true</Props>
+      <Props>$(Props);DebugType=none</Props>
+      <Props>$(Props);PublishDir=$(MSBuildProjectDirectory)\publish\</Props>
+      <Props>$(Props);SelfContained=true</Props>
+    </PropertyGroup>
+    
+    <MSBuild Projects=".\src\DataProtector\DataProtector.csproj" 
+             Targets="restore;publish"
+             Properties="$(Props)" />
+  </Target>
+  
+</Project>

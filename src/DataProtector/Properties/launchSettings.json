@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ConsoleApp": {
+      "commandName": "Project",
+      "commandLineArgs": "--output bin\\Data.txt --salt plop coucou"
+    },
+    "ConsoleApp2": {
+      "commandName": "Project",
+      "commandLineArgs": "-o Data.txt coucou"
+    }
+  }
+}
